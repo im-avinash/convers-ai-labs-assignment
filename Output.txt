@@ -3,10 +3,9 @@ After fixing the bugs:
 
   Input:
   {
-    "email": "your_email@example.com",
+    "email": "avi4shivam@gmail.com",
     "password": "password123"
   }
-
   Output:
   {
     "message": "OTP: 889769",
