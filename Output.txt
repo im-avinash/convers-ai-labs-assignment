@@ -28,11 +28,13 @@ After fixing the bugs:
     "sessionId": "i41gr"
   }
 
+
+
 3.  Get Token: Exchange the session cookie for a JWT (access_token).
   
   Output:
   {
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvdXJfZW1haWxAZXhhbXBsZS5jb20iLCJzZXNzaW9uSWQiOiJ6MXhlYmoiLCJpYXQiOjE3NzA4NjIyOTUsImV4cCI6MTc3MDg2MzE5NX0.O_hGR2hjmZGUkLuTnHiZmCGZLsfV8OyiBE_GTIz7TcA",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF2aTRzaGl2YW1AZ21haWwuY29tIiwic2Vzc2lvbklkIjoibmEybGMiLCJpYXQiOjE3NzA4NjUwMjQsImV4cCI6MTc3MDg2NTkyNH0.tvYizZuU61j4ZWuNHPTL4UZPnyOdOQEw1cJlLz1avyA",
     "expires_in": 900
   }
 
@@ -46,10 +48,10 @@ After fixing the bugs:
   {
     "message": "Access granted",
     "user": {
-        "email": "your_email@example.com",
-        "sessionId": "i41gr",
-        "iat": 1770862295,
-        "exp": 1770863195
+        "email": "avi4shivam@gmail.com",
+        "sessionId": "na2lc",
+        "iat": 1770865024,
+        "exp": 1770865924
     },
-    "success_flag": "FLAG-eW91cl9lbWFpbEBleGFtcGxlLmNvbV9DT01QTEVURURfQVNTSUdOTUVOVA=="
-}
+    "success_flag": "FLAG-YXZpNHNoaXZhbUBnbWFpbC5jb21fQ09NUExFVEVEX0FTU0lHTk1FTlQ="
+  }
