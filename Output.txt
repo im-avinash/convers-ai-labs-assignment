@@ -1,0 +1,56 @@
+After fixing the bugs:
+1.  Login: Receive a loginSessionId,OTP (added in response to Verify in next request) and see an OTP in the server logs.
+
+  Input:
+  {
+    "email": "your_email@example.com",
+    "password": "password123"
+  }
+
+  Output:
+  {
+    "message": "OTP: 889769",
+    "loginSessionId": "i41gr"
+  }
+
+
+
+2.  Verify OTP: Receive a session cookie (session_token).
+  
+  Input:
+  {
+    "loginSessionId": "i41gr",
+    "otp": "889769"
+  }
+
+  Output:
+  {
+    "message": "OTP verified",
+    "sessionId": "i41gr"
+  }
+
+3.  Get Token: Exchange the session cookie for a JWT (access_token).
+  
+  Output:
+  {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvdXJfZW1haWxAZXhhbXBsZS5jb20iLCJzZXNzaW9uSWQiOiJ6MXhlYmoiLCJpYXQiOjE3NzA4NjIyOTUsImV4cCI6MTc3MDg2MzE5NX0.O_hGR2hjmZGUkLuTnHiZmCGZLsfV8OyiBE_GTIz7TcA",
+    "expires_in": 900
+  }
+
+
+
+4.  Access Protected Route: Use the JWT to get a 200 OK response with user details and a unique Success Flag.
+  
+  Set Header Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvdXJfZW1haWxAZXhhbXBsZS5jb20iLCJzZXNzaW9uSWQiOiJ6MXhlYmoiLCJpYXQiOjE3NzA4NjIyOTUsImV4cCI6MTc3MDg2MzE5NX0.O_hGR2hjmZGUkLuTnHiZmCGZLsfV8OyiBE_GTIz7TcA
+  
+  Output:
+  {
+    "message": "Access granted",
+    "user": {
+        "email": "your_email@example.com",
+        "sessionId": "i41gr",
+        "iat": 1770862295,
+        "exp": 1770863195
+    },
+    "success_flag": "FLAG-eW91cl9lbWFpbEBleGFtcGxlLmNvbV9DT01QTEVURURfQVNTSUdOTUVOVA=="
+}

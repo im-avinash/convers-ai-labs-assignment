@@ -15,6 +15,8 @@ const otpStore = {};
 // Middleware
 app.use(requestLogger);
 app.use(express.json());
+app.use(cookieParser()); // register cookie parser middleware
+
 
 
 app.get("/", (req, res) => {
@@ -49,10 +51,9 @@ app.post("/auth/login", (req, res) => {
     // Store OTP
     otpStore[loginSessionId] = otp;
 
-    console.log(`[OTP] Session ${loginSessionId} generated`);
-
+    console.log(`[OTP] Generated OTP ${otp} for session ${loginSessionId}`); // Log OTP for testing purposes
     return res.status(200).json({
-      message: "OTP sent",
+      message: `OTP: ${otp}`, // In real application, OTP would be sent via email/SMS, not returned in response
       loginSessionId,
     });
   } catch (error) {
@@ -109,7 +110,8 @@ app.post("/auth/verify-otp", (req, res) => {
 
 app.post("/auth/token", (req, res) => {
   try {
-    const token = req.headers.authorization;
+    // const token = req.headers.authorization;
+    const token = req.cookies.session_token; // CHANGE 2: Read session token from cookie instead of Authorization header
 
     if (!token) {
       return res
@@ -117,7 +119,7 @@ app.post("/auth/token", (req, res) => {
         .json({ error: "Unauthorized - valid session required" });
     }
 
-    const session = loginSessions[token.replace("Bearer ", "")];
+    const session = loginSessions[token];
 
     if (!session) {
       return res.status(401).json({ error: "Invalid session" });
