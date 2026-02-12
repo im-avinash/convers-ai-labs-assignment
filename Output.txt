@@ -49,7 +49,7 @@ After fixing the bugs:
     "message": "Access granted",
     "user": {
         "email": "avi4shivam@gmail.com",
-        "sessionId": "na2lc",
+        "sessionId": "i41gr",
         "iat": 1770865024,
         "exp": 1770865924
     },
