@@ -8,24 +8,23 @@ After fixing the bugs:
   }
   Output:
   {
-    "message": "OTP: 889769",
-    "loginSessionId": "i41gr"
+    "message": "OTP: 426592",
+    "loginSessionId": "22kdbo"
   }
-
 
 
 2.  Verify OTP: Receive a session cookie (session_token).
   
   Input:
   {
-    "loginSessionId": "i41gr",
-    "otp": "889769"
+    "loginSessionId": "22kdbo",
+    "otp": "426592"
   }
 
   Output:
   {
     "message": "OTP verified",
-    "sessionId": "i41gr"
+    "sessionId": "22kdbo"
   }
 
 
@@ -34,24 +33,23 @@ After fixing the bugs:
   
   Output:
   {
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF2aTRzaGl2YW1AZ21haWwuY29tIiwic2Vzc2lvbklkIjoibmEybGMiLCJpYXQiOjE3NzA4NjUwMjQsImV4cCI6MTc3MDg2NTkyNH0.tvYizZuU61j4ZWuNHPTL4UZPnyOdOQEw1cJlLz1avyA",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF2aTRzaGl2YW1AZ21haWwuY29tIiwic2Vzc2lvbklkIjoiMjJrZGJvIiwiaWF0IjoxNzcwODY2MzgxLCJleHAiOjE3NzA4NjcyODF9.4GE_kJNR_slDHfShWqSorNB2OpoDF4S0zLcxZZpvh9o",
     "expires_in": 900
   }
 
 
-
 4.  Access Protected Route: Use the JWT to get a 200 OK response with user details and a unique Success Flag.
   
-  Set Header Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvdXJfZW1haWxAZXhhbXBsZS5jb20iLCJzZXNzaW9uSWQiOiJ6MXhlYmoiLCJpYXQiOjE3NzA4NjIyOTUsImV4cCI6MTc3MDg2MzE5NX0.O_hGR2hjmZGUkLuTnHiZmCGZLsfV8OyiBE_GTIz7TcA
+  Set Header Authorization : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF2aTRzaGl2YW1AZ21haWwuY29tIiwic2Vzc2lvbklkIjoiMjJrZGJvIiwiaWF0IjoxNzcwODY2MzgxLCJleHAiOjE3NzA4NjcyODF9.4GE_kJNR_slDHfShWqSorNB2OpoDF4S0zLcxZZpvh9o
   
   Output:
   {
     "message": "Access granted",
     "user": {
         "email": "avi4shivam@gmail.com",
-        "sessionId": "i41gr",
-        "iat": 1770865024,
-        "exp": 1770865924
+        "sessionId": "22kdbo",
+        "iat": 1770866381,
+        "exp": 1770867281
     },
     "success_flag": "FLAG-YXZpNHNoaXZhbUBnbWFpbC5jb21fQ09NUExFVEVEX0FTU0lHTk1FTlQ="
   }
